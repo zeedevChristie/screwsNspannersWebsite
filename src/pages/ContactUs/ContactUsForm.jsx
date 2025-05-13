@@ -14,9 +14,9 @@ const WhatsAppForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center  bg-gray-100">
-      <div className="bg-white rounded-lg shadow-md w-96">
-        <h2 className="text-xl font-bold mb-4 text-gray-800">Send a WhatsApp Message</h2>
+    <div className="flex flex-col items-center justify-center  p-4">
+      <div className="bg-black text-white p-5 rounded-lg shadow-md w-full max-w-md">
+        <h2 className="text-xl font-bold mb-4 text-center">Send a WhatsApp Message</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
@@ -44,7 +44,7 @@ const WhatsAppForm = () => {
           />
           <button
             type="submit"
-            className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
+            className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-300"
           >
             Send Message
           </button>
@@ -55,5 +55,3 @@ const WhatsAppForm = () => {
 };
 
 export default WhatsAppForm;
-// This code defines a WhatsAppForm component that allows users to send a message via WhatsApp.
-// It includes a form with fields for the user's name, email, and message. When the form is submitted, it constructs a WhatsApp URL with the provided information and opens it in a new tab. The component is styled using Tailwind CSS classes for a clean and modern look.

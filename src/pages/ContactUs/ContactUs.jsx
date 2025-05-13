@@ -9,38 +9,54 @@ import { TbBrandLinkedinFilled } from "react-icons/tb";
 
 const ContactUs = () => {
   return (
-    <div className="p-10">
-      <div className="flex items-center   gap-x-20 p-">
-        <div className="flex flex-col space-y-10">
-          <a href="https://www.facebook.com/people/ScrewsNspanners/61563364336827/"><IoLogoFacebook/></a>
-          <a href="https://www.instagram.com/screwsnspannerz/"> <AiFillInstagram/> </a>    
-          <a href="https://x.com/screwsNspanners"><FaTwitter/></a>
-          <a href="https://www.linkedin.com/company/screwsnspanners"> <TbBrandLinkedinFilled/>  </a>
-          <a href="#"><IoLogoWhatsapp/> </a>  
+    <div className="p-4 md:p-10">
+      <div className="flex flex-col md:flex-row items-center md:pl-5 gap-10 md:gap-x-20">
+        
+        {/* Social Icons */}
+        <div className="flex flex-row md:flex-col space-x-5 md:space-x-0 md:space-y-10">
+          <a href="https://www.facebook.com/people/ScrewsNspanners/61563364336827/">
+            <IoLogoFacebook className="text-blue-500 hover:text-blue-700 text-3xl md:text-2xl" />
+          </a>
+          <a href="https://www.instagram.com/screwsnspannerz/">
+            <AiFillInstagram className="text-purple-500 hover:text-purple-700 text-3xl md:text-2xl" />
+          </a>
+          <a href="https://x.com/screwsNspanners">
+            <FaTwitter className="text-blue-500 hover:text-blue-700 text-3xl md:text-2xl" />
+          </a>
+          <a href="https://www.linkedin.com/company/screwsnspanners">
+            <TbBrandLinkedinFilled className="text-blue-500 hover:text-blue-700 text-3xl md:text-2xl" />
+          </a>
+          <a href="https://wa.me/2347047001592" target="_blank" rel="noopener noreferrer">
+            <IoLogoWhatsapp className="text-green-500 hover:text-green-700 text-3xl md:text-2xl" />
+          </a>
         </div>
-        <div>
+
+        {/* Contact Form */}
+        <div className="w-full md:w-1/2">
           <ContactUsForm />
         </div>
-        <div>
-          <img src={teleContact} alt="Contact us image" />
-        </div>
-        </div>                          
-      <div className="flex items-center  justify-end gap-x-10 ">
-        {/* <div className="flex flex-col space-y-5">
-          <h1 className="text-[2rem] font-bold">Contact Us</h1>
-          <p className="text-[1.5rem]">We are here to help you</p>
-          <p className="text-[1.5rem]">Get in touch with us</p>
-          </div> */}
-        <div className="flex flex-col px-14">
-          <div className="flex items-center">
-          <LuMapPin />
-          <p className="">Plot 29 Shittu Animashaun Street Gbagada, Lagos, Nigeria</p>
+
+        {/* Contact Info & Image */}
+        <div className="flex flex-col items-center w-full md:w-1/3 space-y-5">
+          <div>
+            <img className="w-[15rem] md:w-[20rem]" src={teleContact} alt="Contact us image" />
           </div>
-          <div className="flex">
-          <p className="px-5">0704 700 1592</p>
-          <a href="#">help@screwsandspanners.com</a>
+          <div className="flex flex-col px-5 md:px-10 space-y-3">
+            <div className="flex items-center space-x-2">
+              <LuMapPin size={40} color="red" className="text-gray-600 text-xl" />
+              <p className="text-center md:text-center text-sm md:text-base">
+                Plot 29 Shittu Animashaun Street, Gbagada, Lagos, Nigeria
+              </p>
+            </div>
+            <div className="flex flex-col items-center  space-y-2">
+              <p className="text-sm md:text-base font-semibold">0704 700 1592</p>
+              <a href="mailto:help@screwsandspanners.com" className="text-blue-600 hover:underline">
+                help@screwsandspanners.com
+              </a>
+            </div>
           </div>
         </div>
+        
       </div>
     </div>
   );

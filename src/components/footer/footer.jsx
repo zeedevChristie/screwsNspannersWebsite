@@ -53,8 +53,8 @@ const Footer = () => {
             <a href="/contactUs" className="hover:text-white">
               Contact Us
             </a>
-            <a href="/faqs" className="hover:text-white">
-              FAQs
+            <a href="/faq" className="hover:text-white">
+              FAQ
             </a>
             <a href="/privacyPolicy" className="hover:text-white">
               Privacy Policy
