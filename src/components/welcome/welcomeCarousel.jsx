@@ -9,7 +9,7 @@ import image4 from "../../assets/images/convenience.png";
 import image5 from "../../assets/images/convenience.png";
 
 import androidQR from "../../assets/QRCODE/androidQRcode.jpg";
-import IOSqr from "../../assets/QRCODE/IOSqrcode.jpg";
+import IOSqr from "../../assets/QRCODE/IOSqrCode.jpg"
 
 const slides = [
   {

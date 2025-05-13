@@ -9,8 +9,8 @@ import { TbBrandLinkedinFilled } from "react-icons/tb";
 
 const ContactUs = () => {
   return (
-    <>
-      <div className="flex items-center px-10 gap-x-20 p-">
+    <div className="p-10">
+      <div className="flex items-center   gap-x-20 p-">
         <div className="flex flex-col space-y-10">
           <a href="https://www.facebook.com/people/ScrewsNspanners/61563364336827/"><IoLogoFacebook/></a>
           <a href="https://www.instagram.com/screwsnspannerz/"> <AiFillInstagram/> </a>    
@@ -42,7 +42,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
