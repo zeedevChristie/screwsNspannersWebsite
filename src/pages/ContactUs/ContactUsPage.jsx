@@ -5,10 +5,12 @@ import Footer from '../../components/footer/footer'
 
 const ContactUsPage = () => {
   return (
-    <div>
+    <div className="flex flex-col h-screen">
       <Navbar/>
+      <main className='flex-grow w-full  overflow-auto '>
       <ContactUs/>
       <Footer/>
+      </main>
     </div>
   )
 }

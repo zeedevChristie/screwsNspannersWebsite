@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FAQAccordion = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const navigate = useNavigate(); // Enables navigation
 
   const faqItems = [
     { question: "How do I request an Artisan?", answer: "Simply log in, navigate to the request section, and follow the steps." },
@@ -20,13 +17,10 @@ const FAQAccordion = () => {
         <div key={index} className="border-b">
           <div
             className="p-4 cursor-pointer hover:bg-red-200 transition-all rounded-md"
-            onClick={() => toggleAccordion(index)}
+            onClick={() => navigate("/faq")} // Redirects to FAQ page
           >
             <strong className="text-lg">{item.question}</strong>
           </div>
-          {openIndex === index && (
-            <div className="p-4  shadow-md rounded-md">{item.answer}</div>
-          )}
         </div>
       ))}
     </div>
@@ -34,22 +28,10 @@ const FAQAccordion = () => {
 };
 
 const slides = [
-  {
-    title: "How to use the App",
-    description: "Go to Playstore or IOS search for screws and spanners.  or just scan the QRcode",
-  },
-  {
-    title: "Transparent Pricing",
-    description: "No hidden fees—know exactly what you're paying for with clear estimates.",
-  },
-  {
-    title: "24/7 Availability",
-    description: "Need help anytime? Our Artisans are ready around the clock to assist you.",
-  },
-  {
-    title: "Frequently Asked Questions",
-    description: <FAQAccordion />,
-  },
+  { title: "How to use the App", description: "Go to Playstore or IOS search for Screws and Spanners. Or scan the QR code." },
+  { title: "Transparent Pricing", description: "No hidden fees—know exactly what you're paying for with clear estimates." },
+  { title: "24/7 Availability", description: "Need help anytime? Our artisans are ready around the clock to assist you." },
+  { title: "Frequently Asked Questions", description: <FAQAccordion /> },
 ];
 
 const HowToText = () => {
@@ -58,7 +40,8 @@ const HowToText = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 10000);
+    }, 80000); // Auto-scrolls every 10 seconds
+
     return () => clearInterval(interval);
   }, []);
 
@@ -78,29 +61,19 @@ const HowToText = () => {
       </div>
 
       {/* Navigation Buttons */}
-      {/* <button
-        onClick={prevSlide}
-        className="absolute left-4 px-3 py-1 rounded-full"
-      >
+      <button onClick={prevSlide} className="absolute left-4 px-3 py-1 rounded-full">
         ◀
       </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 px-3 py-1 rounded-full"
-      >
+      <button onClick={nextSlide} className="absolute right-4 px-3 py-1 rounded-full">
         ▶
-      </button> */}
+      </button>
 
-      {/* Dots for Navigation */}
+      {/* Navigation Dots */}
       <div className="absolute bottom-4 flex justify-center space-x-2">
         {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === index ? "bg-white" : "bg-gray-500"
-            }`}
-          ></button>
+          <button key={index} onClick={() => setCurrentSlide(index)} className={`w-3 h-3 rounded-full ${
+            currentSlide === index ? "bg-white" : "bg-gray-500"
+          }`}></button>
         ))}
       </div>
     </div>

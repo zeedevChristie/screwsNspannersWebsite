@@ -45,19 +45,19 @@ const HowToImages = () => {
         />
       </div>
 
-      {/* Navigation Buttons
+      {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2  text-white px-4 py-2 rounded-full"
       >
-        ◀
+        {/* ◀ */}
       </button>
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 transform -translate-y-1/2  text-white px-4 py-2 rounded-full"
       >
-        ▶
-      </button> */}
+        {/* ▶ */}
+      </button> 
 
       {/* Dots for Navigation */}
 

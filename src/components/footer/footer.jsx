@@ -2,6 +2,10 @@ import React from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { IoLogoTwitter, IoLogoWhatsapp } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
+import { TbBrandLinkedinFilled } from "react-icons/tb";
+
+import iosLogo from "../../assets/images/appstore.png";
+import playstoreLogo from "../../assets/images/playstore.png";
 
 const Footer = () => {
   return (
@@ -18,7 +22,7 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div className="  gap-5  text-gray-400 text-sm">
-            <p>📞 Phone: +2347047001592</p>
+            <p>📞 Phone: +234 704 700 1592</p>
             <p>
               📩 Email:{" "}
               <a
@@ -41,14 +45,14 @@ const Footer = () => {
             <a href="/about" className="hover:text-white">
               About
             </a>
-            <a href="/project" className="hover:text-white">
+            <a href="/projects" className="hover:text-white">
               Projects
             </a>
             <a href="/services" className="hover:text-white">
-              Services
+              Service Delivery
             </a>
-            <a href="/blogs" className="hover:text-white">
-              Blogs
+            <a href="/vlogs" className="hover:text-white">
+              Vlogs
             </a>
             <a href="/contactUs" className="hover:text-white">
               Contact Us
@@ -93,34 +97,50 @@ const Footer = () => {
             <h2 className="text-xl mb-3 font-bold ">Stay Connected</h2>
             <div className="flex text-xl space-x-6 mb-4">
               <a
-                href="https://twitter.com/yourpage"
+                href="https://x.com/screwsNspanners"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <IoLogoTwitter />
               </a>
               <a
-                href="https://facebook.com/yourpage"
+                href="https://web.facebook.com/profile.php?id=61563364336827"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaFacebookF />
               </a>
               <a
-                href="https://instagram.com/yourpage"
+                href="https://www.instagram.com/screwsnspannerz/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <RiInstagramFill />
               </a>
               <a
-                href="https://whatsapp.com/yourpage"
+                href="https://wa.me/2347047001592"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IoLogoWhatsapp/>
+                <IoLogoWhatsapp />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/screwsnspanners"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+               <TbBrandLinkedinFilled  />
               </a>
             </div>
+          </div>
+          {/* App Download Section */}
+          <div className="flex gap-5">
+            <a href="https://apps.apple.com/ng/app/screws-and-spanners/id6630377072">
+              <img className="w-[6rem]" src={iosLogo} alt="" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.triz.screwsspanners&pcampaignid=web_share&pli=1">
+              <img className="w-[6rem]" src={playstoreLogo} alt="" />
+            </a>
           </div>
         </div>
       </div>

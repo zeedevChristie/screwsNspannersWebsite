@@ -7,16 +7,18 @@ import HowToSection from "../../components/howToSection/howToSection";
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
+    <div className="flex flex-col h-screen">
+    
+     <Navbar />
+    
 
-      <main className="flex-grow overflow-auto">
+      <main className="flex-grow w-full  overflow-auto">
         <WelcomeCarousel />
         <Statistics />
         <HowToSection />
+      <Footer />                                
       </main>
 
-      <Footer />
     </div>
   );
 };

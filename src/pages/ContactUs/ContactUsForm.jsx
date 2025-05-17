@@ -15,7 +15,7 @@ const WhatsAppForm = () => {
 
   return (
     <div className="flex flex-col items-center justify-center  p-4">
-      <div className="bg-black text-white p-5 rounded-lg shadow-md w-full max-w-md">
+      <div className=" text-white p-5 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-xl font-bold mb-4 text-center">Send a WhatsApp Message</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input

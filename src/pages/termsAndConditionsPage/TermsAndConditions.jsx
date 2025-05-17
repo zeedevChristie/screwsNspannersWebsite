@@ -7,8 +7,11 @@ const TermsAndConditions = () => {
   return (
     <>
       <Navbar />
-      <TandC/>
-      <Footer />
+
+      <main className="flex-grow w-full h-[100vh] overflow-auto ">
+        <TandC />
+        <Footer />
+      </main>
     </>
   );
 };

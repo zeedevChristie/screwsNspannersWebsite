@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 const faqData = [
-  { question: "What services do you offer?", answer: "We offer web development, app design, and more." },
-  { question: "How can I contact support?", answer: "You can email us at support@example.com or call our helpline." },
-  { question: "Do you provide refunds?", answer: "Yes, we have a refund policy. Check our terms for details." },
-  { question: "Is there a free trial?", answer: "Yes! We provide a 7-day free trial for new users." },
-  { question: "How secure is my data?", answer: "We follow strict security protocols to ensure data protection." },
+  { question: "How do I request an Artisan?", answer: "Simply log in, navigate to the request section, and follow the steps." },
+  { question: "How do I track my request?", answer: "You can view the progress of your request in the 'My Requests' section." },
+  { question: "What payment methods are accepted?", answer: "We support credit cards, bank transfers, and mobile payments." },
+  { question: "Is customer support available?", answer: "Yes! Our support team is available 24/7 through the app and email." },
 ];
 
 const FAQ = () => {
@@ -16,7 +15,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6">
+    <div className="max-w-lg mx-auto p-6 ">
       <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
       {faqData.map((item, index) => (
         <div

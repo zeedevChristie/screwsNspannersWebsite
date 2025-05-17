@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import iosLogo from "../../assets/images/appstore.png"
 import playstoreLogo from "../../assets/images/playstore.png"
 
-import image1 from "../../assets/images/convenience.png";
-import image2 from "../../assets/images/convenience.png";
-import image3 from "../../assets/images/convenience.png";
-import image4 from "../../assets/images/convenience.png";
-import image5 from "../../assets/images/convenience.png";
+
+
+
+import image1 from "../../assets/welcomeImages/aboutUs.png";
+import image2 from "../../assets/welcomeImages/3Cs.jpg";
+import image3 from "../../assets/welcomeImages/convenience.png";
+import image4 from "../../assets/welcomeImages/competence.jpg";
+import image5 from "../../assets/welcomeImages/control.jpg";
 
 import androidQR from "../../assets/QRCODE/androidQRcode.jpg";
 import IOSqr from "../../assets/QRCODE/IOSqrCode.jpg"
@@ -42,12 +45,13 @@ const slides = [
 ];
 
 const WelcomeCarousel = () => {
+  
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 10000);
+    }, 40000);
     return () => clearInterval(interval);
   }, []);
 
@@ -57,18 +61,18 @@ const WelcomeCarousel = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
   return (
-    <div className="relative w-full h-[98%] bg-[#031324] text-white flex items-center justify-center">
-      <div className="flex w-full h-full items-center justify-between rounded-lg transition-all duration-500 relative">
+    <div className="relative w-full h-full bg-black text-white flex items-center justify-center">
+      <div className="flex w-full h-full items-center justify-between rounded-lg p-2 relative">
         {/* Image */}
         <img
           src={slides[currentSlide].image}
           alt=""
-          className="w-1/2 h-full object-cover rounded-lg"
+          className="w-1/2 h-[27rem] object-cover rounded-lg"
         />
 
         {/* Text Content */}
-        <div className="w-1/2 text-center pt-2 flex flex-col justify-between h-full">
-          <div className="space-y-10 pt-5">
+        <div className="w-1/2 text-center p-2 flex flex-col justify-between h-full">
+          <div className=" pt-">
             <div className="text-2xl font-bold">
               {slides[currentSlide].title}
             </div>
@@ -103,15 +107,15 @@ const WelcomeCarousel = () => {
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 bg-gray-800 text-white rounded-full p-2"
+          className="absolute left-0  text-white rounded-full p-2"
         >
-          ◀
+          
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-0 bg-gray-800 text-white rounded-full p-2"
+          className="absolute right-0  text-white rounded-full p-2"
         >
-          ▶
+          
         </button>
       </div>
 
