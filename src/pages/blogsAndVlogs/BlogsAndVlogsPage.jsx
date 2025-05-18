@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/navBar/nav'
 import BlogsAndVlogs from './BlogsAndVlogs'
-import Footer from '../../components/footer/Footer'
+import Footer from '../../components/footer/footer'
 
 const BlogsAndVlogsPage = () => {
   return (
