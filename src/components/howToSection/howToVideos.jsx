@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SnS1 from "../../assets/videos/SnS1.mp4";
 import howToRequest4SP from "../../assets/videos/howToRequest4SP.mp4";
-import howToUseTheApp from "../../assets/videos/howToUseTheApp.mp4";
+import howToUseTheApp from "../../assets/videos/HowToUseTheApp.mp4";
 import iKnowSomwoneCheeper from "../../assets/videos/iKnowSomwoneCheeper.mp4";
 
 const videos = [
