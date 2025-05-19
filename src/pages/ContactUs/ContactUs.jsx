@@ -11,28 +11,23 @@ import contactBackground from "../../assets/images/contactBackground.jpg";
 const ContactUs = () => {
   return (
     <div
-      className="p-4 md:p-10 bg-[#212121] h-full text-white bg-cover bg- flex justify-center items-center"
+      className="p-6 md:p-12 bg-[#212121] min-h-screen text-white bg-cover flex justify-center items-center"
       style={{ backgroundImage: `url(${contactBackground})` }}
     >
-      <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-x-10">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 w-full max-w-6xl">
         
         {/* Social Icons */}
-        <div className="flex flex-row md:flex-col space-x-5 md:space-x-0 md:space-y-10">
-          <a href="https://www.facebook.com/people/ScrewsNspanners/61563364336827/">
-            <IoLogoFacebook className="text-blue-500 hover:text-blue-700 text-3xl md:text-2xl" />
-          </a>
-          <a href="https://www.instagram.com/screwsnspannerz/">
-            <AiFillInstagram className="text-purple-500 hover:text-purple-700 text-3xl md:text-2xl" />
-          </a>
-          <a href="https://x.com/screwsNspanners">
-            <FaTwitter className="text-blue-500 hover:text-blue-700 text-3xl md:text-2xl" />
-          </a>
-          <a href="https://www.linkedin.com/company/screwsnspanners">
-            <TbBrandLinkedinFilled className="text-blue-500 hover:text-blue-700 text-3xl md:text-2xl" />
-          </a>
-          <a href="https://wa.me/2347047001592" target="_blank" rel="noopener noreferrer">
-            <IoLogoWhatsapp className="text-green-500 hover:text-green-700 text-3xl md:text-2xl" />
-          </a>
+        <div className="flex flex-row md:flex-col space-x-6 md:space-x-0 md:space-y-6">
+          {[["https://www.facebook.com/people/ScrewsNspanners/61563364336827/", IoLogoFacebook, "text-blue-500"],
+            ["https://www.instagram.com/screwsnspannerz/", AiFillInstagram, "text-purple-500"],
+            ["https://x.com/screwsNspanners", FaTwitter, "text-blue-500"],
+            ["https://www.linkedin.com/company/screwsnspanners", TbBrandLinkedinFilled, "text-blue-500"],
+            ["https://wa.me/2347047001592", IoLogoWhatsapp, "text-green-500"]
+          ].map(([url, Icon, color], index) => (
+            <a key={index} href={url} target="_blank" rel="noopener noreferrer">
+              <Icon className={`${color} hover:opacity-75 text-3xl md:text-2xl`} />
+            </a>
+          ))}
         </div>
 
         {/* Contact Form */}
@@ -41,20 +36,18 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Info & Image */}
-        <div className="flex flex-col items-center w-full md:w-1/3 space-y-5">
-          <div>
-            {/* <img className="w-[15rem] md:w-[20rem]" src={teleContact} alt="Contact us image" /> */}
-          </div>
-          <div className="flex flex-col px-5 md:px-10 space-y-3 ">
-            <div className="flex items-center space-x-2 pt-[10rem] ">
-              <LuMapPin size={40} color="red" className="text-gray-600 text-xl" />
-              <p className="text-center md:text-center text-sm md:text- font-serif text-[1.2em] ">
+        <div className="flex flex-col items-center w-full md:w-1/3 space-y-6">
+          {/* <img className="w-40 md:w-60 rounded-lg" src={teleContact} alt="Contact Us" /> */}
+          <div className="flex flex-col text-center md:text-left space-y-3">
+            <div className="flex items-center justify-center md:justify-start space-x-2">
+              <LuMapPin size={30} color="red" className="text-gray-600" />
+              <p className="text-sm md:text-base font-serif">
                 Plot 29 Shittu Animashaun Street, Gbagada, Lagos, Nigeria
               </p>
             </div>
-            <div className="flex flex-col items-center space-y-2">
-              <p className="text-sm md:text-base font-semibold">0704 700 1592</p>
-              <a href="mailto:help@screwsandspanners.com" className="text-blue-600 hover:underline">
+            <div className="space-y-2">
+              <p className="text-sm md:text-base font-semibold">📞 0704 700 1592</p>
+              <a href="mailto:help@screwsandspanners.com" className="text-blue-500 hover:underline">
                 help@screwsandspanners.com
               </a>
             </div>

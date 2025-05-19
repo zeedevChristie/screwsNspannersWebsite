@@ -148,7 +148,7 @@ const Footer = () => {
       <p className=" mt-20 text-gray-400 text-sm">
         &copy; {new Date().getFullYear()} Triz House. All rights reserved.
       </p>
-    </footer>
+    </footer> 
   );
 };
 
