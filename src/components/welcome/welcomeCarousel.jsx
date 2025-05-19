@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import iosLogo from "../../assets/images/appstore.png";
 import playstoreLogo from "../../assets/images/playstore.png";
 
-import image1 from "../../assets/welcomeImages/aboutUs.png";
-import image2 from "../../assets/welcomeImages/3Cs.jpg";
+import image1 from "../../assets/logos/SandSlogo6.png";
+import image2 from "../../assets/welcomeImages/3C.jpg";
 import image3 from "../../assets/welcomeImages/convenience.png";
 import image4 from "../../assets/welcomeImages/competence.jpg";
 import image5 from "../../assets/welcomeImages/control.jpg";
@@ -30,13 +30,18 @@ const WelcomeCarousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full bg-black text-white flex items-center justify-center">
-      <div className="flex flex-col md:flex-row items-center justify-center w-full md:h-[30rem] gap-4 p-4">
+    <div className="relative w-full h-full  bg-black text-white flex items-center justify-center">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full md:h- gap-4 p-4">
         
         {/* Image */}
-        <img src={slides[currentSlide].image} alt="" className="w-full md:w-1/2 h-[20rem] md:h-[25rem] object-cover rounded-lg" />
-
-        {/* Text Content */}
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <img
+            src={slides[currentSlide].image}
+            alt=""
+            className="max-w-full max-h-[] object-contain rounded-lg"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </div>
         <div className="w-full md:w-1/2 text-center md:text-left p-4">
           <h2 className="text-xl md:text-3xl font-bold">{slides[currentSlide].title}</h2>
           <p className="text-sm md:text-lg mt-2">{slides[currentSlide].description}</p>
@@ -86,3 +91,23 @@ const WelcomeCarousel = () => {
 };
 
 export default WelcomeCarousel;
+
+
+
+
+
+/*
+To share your project running on localhost, you can use a tool like [ngrok](https://ngrok.com/) or [LocalTunnel](https://github.com/localtunnel/localtunnel).
+
+Example using npx localtunnel:
+1. Install (if not already): npm install -g localtunnel
+2. Run your React app: npm start
+3. In a new terminal, run: npx localtunnel --port 5173
+4. You'll get a public URL to share.
+
+Or with ngrok:
+1. Download ngrok and run: ngrok http 3000
+
+
+This will expose your local server to the internet with a public URL.
+*/
