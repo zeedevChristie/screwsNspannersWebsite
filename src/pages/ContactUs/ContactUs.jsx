@@ -15,12 +15,12 @@ const ContactUs = () => {
 
   return (
     <div
-      className="p-6 md:p-12 bg-[#212121] min-h-screen text-white bg-cover flex justify-center items-center"
+      className="p-6 md:p-12 bg-[#212121] min-h-[80vh] text-white bg-cover  flex justify-center items-center"
       // style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 w-full max-w-6xl">
         {/* Social Icons */}
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <div className="flex flex-col gap-4 justify-center md:justify-start">
           {[
             ["https://www.facebook.com/people/ScrewsNspanners/61563364336827/", IoLogoFacebook, "text-blue-500"],
             ["https://www.instagram.com/screwsnspannerz/", AiFillInstagram, "text-purple-500"],

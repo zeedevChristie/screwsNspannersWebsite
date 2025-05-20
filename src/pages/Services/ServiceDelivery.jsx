@@ -7,11 +7,13 @@ const ServiceDelivery = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero Section */}
-      <div 
+      <div
         className="bg-cover bg-center min-h-[20rem] flex flex-col items-center justify-center text-center font-serif text-black p-6 md:p-12"
         style={{ backgroundImage: `url(${office})` }}
       >
-        <h1 className="text-2xl md:text-[3rem] font-semibold">Our Service Deliveries</h1>
+        <h1 className="text-2xl md:text-[3rem] font-semibold">
+          Our Service Deliveries
+        </h1>
 
         <div className="flex flex-col md:flex-row items-center gap-3 mt-4">
           <div className="flex items-center gap-2">
@@ -28,20 +30,27 @@ const ServiceDelivery = () => {
         <section>
           <h3 className="text-xl md:text-[2rem] font-semibold">Introduction</h3>
           <p className="text-sm md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut fugit iusto aperiam quis harum rem dolor.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut fugit
+            iusto aperiam quis harum rem dolor.
           </p>
         </section>
 
         <hr className="border-t-2 border-dashed border-gray-500" />
 
         <section>
-          <h2 className="text-xl md:text-[2rem] font-semibold">Service Provider</h2>
+          <h2 className="text-xl md:text-[2rem] font-semibold">
+            Service Provider
+          </h2>
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Who are the Service Providers?</h3>
+            <h3 className="text-lg font-semibold">
+              Who are the Service Providers?
+            </h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div className="space-y-2 mt-4">
-            <h3 className="text-lg font-semibold">Join our Community as a Service Provider</h3>
+            <h3 className="text-lg font-semibold">
+              Join our Community as a Service Provider
+            </h3>
             <ul className="list-disc pl-5">
               <li>Step 1</li>
               <li>Step 2</li>
@@ -56,7 +65,22 @@ const ServiceDelivery = () => {
         {/* Customers Section */}
         <section>
           <h2 className="text-xl md:text-[2rem] font-semibold">Customers</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <h3 className="text-lg font-semibold">
+            Who are the Service Providers?
+          </h3>
+
+          <div className="space-y-2 mt-4">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+            <h3 className="text-lg font-semibold">
+              Join our Community as a Customer
+            </h3>
+            <ul className="list-disc pl-5">
+              <li>Step 1</li>
+              <li>Step 2</li>
+              <li>Step 3</li>
+              <li>Step 4</li>
+            </ul>
+          </div>
         </section>
 
         <hr className="border-t-2 border-dashed border-gray-500" />
