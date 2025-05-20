@@ -55,98 +55,85 @@ const WelcomeCarousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full pl-4 pt-4 bg-black text-white overflow-hidden flex flex-col items-center">
-      {/* Slide Wrapper */}
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className="flex   flex-col md:flex-row items-center justify-center w-full flex-shrink-0"
-          >
-            {/* Image Side */}
-            <div className="w-full md:w-1/2 h-[80vh]  flex items-center justify-center">
-              <img
-                src={slide.image}
-                alt=""
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-
-            {/* Text & QR Code Side */}
-            <div className="w-full md:w-1/2 py- flex flex-col px-8 h-[80vh] justify-between">
-              {/* Text Section */}
-              <div className="text-left">
-                <h2 className="text-xl md:text-3xl font-bold text-center ">{slide.title}</h2>
-                <p className="text-sm md:text-lg mt-2">{slide.description}</p>
+    <div className="relative w-full px-4 pt-4 bg-black text-white overflow-hidden flex flex-col items-center">
+      <div className="w-full overflow-x-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="flex flex-col md:flex-row items-center justify-center w-full flex-shrink-0"
+            >
+              <div className="w-full md:w-1/2 h-[60vh] sm:h-[70vh] flex items-center justify-center">
+                <img
+                  src={slide.image}
+                  alt=""
+                  className="w-full h-full object-cover rounded-lg max-w-full"
+                />
               </div>
 
-              {/* QR Code Section */}
-              <div className="qr-section p-4 flex justify-between">
+              <div className="w-full md:w-1/2 py-4 px-6 flex flex-col h-[60vh] sm:h-[70vh] justify-between">
                 <div className="text-left">
-                  <a href="https://apps.apple.com/ng/app/screws-and-spanners/id6630377072">
-                    <img className="w-[6rem]" src={iosLogo} alt="iOS App" />
-                    <img className="w-[6rem]" src={IOSqr} alt="iOS QR Code" />
-                  </a>
+                  <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-center">
+                    {slide.title}
+                  </h2>
+                  <p className="text-sm md:text-lg mt-2 text-center">{slide.description}</p>
                 </div>
-                <div className="text-left">
-                  <a href="https://play.google.com/store/apps/details?id=com.triz.screwsspanners&pcampaignid=web_share&pli=1">
-                    <img
-                      className="w-[6rem]"
-                      src={playstoreLogo}
-                      alt="Play Store"
-                    />
-                    <img
-                      className="w-[6rem]"
-                      src={androidQR}
-                      alt="Android QR Code"
-                    />
-                  </a>
+
+                <div className="qr-section p-4 flex justify-between">
+                  <div className="text-left">
+                    <a href="https://apps.apple.com/ng/app/screws-and-spanners/id6630377072">
+                      <img className="w-[5rem] sm:w-[6rem]" src={iosLogo} alt="iOS App" />
+                      <img className="w-[5rem] sm:w-[6rem]" src={IOSqr} alt="iOS QR Code" />
+                    </a>
+                  </div>
+                  <div className="text-left">
+                    <a href="https://play.google.com/store/apps/details?id=com.triz.screwsspanners&pcampaignid=web_share&pli=1">
+                      <img className="w-[5rem] sm:w-[6rem]" src={playstoreLogo} alt="Play Store" />
+                      <img className="w-[5rem] sm:w-[6rem]" src={androidQR} alt="Android QR Code" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="absolute w-1/2 bottom-10 left-1/2 transform -translate-x-1/2 flex gap-6">
-        <button
-          onClick={() =>
-            setCurrentSlide((prev) =>
-              prev === 0 ? slides.length - 1 : prev - 1
-            )
-          }
-          className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-300"
-        >
-          ❮
-        </button>
-        <button
-          onClick={() =>
-            setCurrentSlide((prev) =>
-              prev === slides.length - 1 ? 0 : prev + 1
-            )
-          }
-          className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-300"
-        >
-          ❯
-        </button>
-      </div>
+      <div className="absolute w-1/2 bottom-6 sm:bottom-12 left-1/2 transform -translate-x-1/2 flex gap-4 sm:gap-6 justify-center">
+  <button
+    onClick={() =>
+      setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+    }
+    className="bg-white text-black px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-gray-300"
+  >
+    ❮
+  </button>
+  <button
+    onClick={() =>
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+    }
+    className="bg-white text-black px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-gray-300"
+  >
+    ❯
+  </button>
+</div>
 
-      {/* Dots Navigation */}
-      <div className="absolute w-1/2 bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
-              currentSlide === index ? "bg-white" : "bg-gray-400"
-            }`}
-          ></button>
-        ))}
-      </div>
+
+     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center space-x-2 sm:space-x-3">
+  {slides.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => setCurrentSlide(index)}
+      className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full ${
+        currentSlide === index ? "bg-white" : "bg-gray-400"
+      }`}
+    ></button>
+  ))}
+</div>
+
     </div>
   );
 };
