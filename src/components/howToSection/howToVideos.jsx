@@ -12,7 +12,7 @@ const videos = [
   { src: SnS1, title: "Intro to Screws And Spanners" },
 ];
 
-const HowToVideos = () => {
+const HowToVideos = () => { 
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // useEffect(() => {
@@ -32,7 +32,7 @@ const HowToVideos = () => {
   };
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center bg-black text-white">
+    <div className="relative w-full h-[80vh] flex items-center justify-center bg-black text-white">
       <div className="flex flex-col items-center w-full max-w-4xl p-6 space-y-4">
         <h2 className="text-2xl font-bold">{videos[currentSlide].title}</h2>
         <video

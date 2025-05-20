@@ -10,31 +10,32 @@ const BlogsAndVlogs = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const content = [
-    { id: 1, type: "vlog", title: "Introduction", video: introVideo },
+    {
+      id: 1,
+      type: "vlog",
+      title: "What Problem Are We Solving?",
+      video: screwsNspanners,
+    },
     {
       id: 2,
       type: "vlog",
-      title: "Request for a Service Provider",
-      video: howToRequest4SP,
+      title: "I Know Someone Cheaper",
+      video: iKnowSomwoneCheeper,
     },
-    {
-      id: 3,
-      type: "vlog",
-      title: "Onboarding Service Provider",
-      video: SPOnboarding,
-    },
-    { id: 4, type: "vlog", title: "How To Use The App", video: HowToUseTheApp },
+    { id: 3, type: "vlog", title: "Introducing Screws and Spanners", video: introVideo },
+    
+    { id: 4, type: "vlog", title: "How To Use The App", video: HowToUseTheApp },  
     {
       id: 5,
       type: "vlog",
-      title: "What Problems Do We Solve?",
-      video: screwsNspanners,
+      title: "How To : Request For A Service Provider",
+      video: howToRequest4SP,
     },
     {
       id: 6,
       type: "vlog",
-      title: "I Know Someone Cheeper",
-      video: iKnowSomwoneCheeper,
+      title: "How To : Onboard As A Service Provider",
+      video: SPOnboarding,
     },
   ];
 

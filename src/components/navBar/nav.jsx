@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="px-4 md:px-16 py-4 bg-black text-white">
+    <nav className="px-4 md:px-8 py-4 bg-black text-white">
       <div className="flex justify-between items-center">
         {/* Brand / Logo */}
         <h1 className="text-xl font-bold">LOGO</h1>
@@ -43,10 +43,10 @@ const Navbar = () => {
 
         {/* App Download Buttons */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 md:mt-0 items-center">
-          <a href="#">
+          <a href="https://play.google.com/store/apps/details?id=com.triz.screwsspanners&pcampaignid=web_share&pli=1">
             <img className="w-24 md:w-28" src={playstore} alt="playstore download" />
           </a>
-          <a href="#">
+          <a href="https://apps.apple.com/ng/app/screws-and-spanners/id6630377072">
             <img className="w-24 md:w-28" src={iosLogo} alt="ios download" />
           </a>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import teleContact from "../../assets/images/teleContact.jpg";
+import teleContact from "../../assets/images/teleContact.png";
 import ContactUsForm from "./ContactUsForm";
 import { LuMapPin } from "react-icons/lu";
 import { IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io";
@@ -7,12 +7,13 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import contactBackground from "../../assets/images/contactBackground.jpg";
+import contactBackground2 from "../../assets/images/contactBackground2.jpg";
 
 const ContactUs = () => {
   return (
     <div
-      className="p-6 md:p-12 bg-[#212121] min-h-screen text-white bg-cover flex justify-center items-center"
-      style={{ backgroundImage: `url(${contactBackground})` }}
+      className="p-6 md:p-12 bg-[#212121] h-[82vh] text-white bg-cover flex justify-center items-center"
+      // style={{ backgroundImage: `url(${contactBackground})` }}
     >
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 w-full max-w-6xl">
         
@@ -36,9 +37,9 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Info & Image */}
-        <div className="flex flex-col items-center w-full md:w-1/3 space-y-6">
-          {/* <img className="w-40 md:w-60 rounded-lg" src={teleContact} alt="Contact Us" /> */}
-          <div className="flex flex-col text-center md:text-left space-y-3">
+        <div className="flex flex-col items-center w-full md:w-1/3  ">
+          <img className="w-40 md:w-[20rem] rounded-lg" src={teleContact} alt="Contact Us" />
+          <div className="flex flex-col text-center md:text-center  space-y-  ">
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <LuMapPin size={30} color="red" className="text-gray-600" />
               <p className="text-sm md:text-base font-serif">

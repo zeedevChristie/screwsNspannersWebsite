@@ -36,44 +36,62 @@ const slides = [
 
 const HowToText = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isManual, setIsManual] = useState(false); // Tracks manual clicks
 
+  // Auto-slide every 8 seconds, resetting if manual navigation occurs
   useEffect(() => {
+    if (isManual) return; // Prevents auto-scroll if manually changed
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 80000); // Auto-scrolls every 10 seconds
+    }, 8000); // Updated to 8 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isManual]); // Reset interval when manual action happens
 
   const nextSlide = () => {
+    setIsManual(true);
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    setTimeout(() => setIsManual(false), 5000); // Resume auto-scroll after manual navigation
   };
 
   const prevSlide = () => {
+    setIsManual(true);
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setTimeout(() => setIsManual(false), 5000);
   };
 
   return (
-    <div className="relative w-full flex justify-center bg-gray-800 text-white p-6">
+    <div className="relative w-full h-[80vh] flex justify-center bg-black text-white p-6">
       <div className="text-center space-y-4">
         <div className="text-2xl font-bold">{slides[currentSlide].title}</div>
         <div className="text-lg">{slides[currentSlide].description}</div>
       </div>
 
-      {/* Navigation Buttons */}
-      <button onClick={prevSlide} className="absolute left-4 px-3 py-1 rounded-full">
-        ◀
-      </button>
-      <button onClick={nextSlide} className="absolute right-4 px-3 py-1 rounded-full">
-        ▶
-      </button>
+      {/* Navigation Buttons - Centered Below */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-6">
+        <button onClick={prevSlide} className="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-600">
+          ❮
+        </button>
+        <button onClick={nextSlide} className="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-600">
+          ❯
+        </button>
+      </div>
 
       {/* Navigation Dots */}
-      <div className="absolute bottom-4 flex justify-center space-x-2">
+      <div className="absolute bottom-4 left-[50%] transform -translate-x-1/2 flex justify-center space-x-2">
         {slides.map((_, index) => (
-          <button key={index} onClick={() => setCurrentSlide(index)} className={`w-3 h-3 rounded-full ${
-            currentSlide === index ? "bg-white" : "bg-gray-500"
-          }`}></button>
+          <button
+            key={index}
+            onClick={() => {
+              setIsManual(true);
+              setCurrentSlide(index);
+              setTimeout(() => setIsManual(false), 5000);
+            }}
+            className={`w-3 h-3 rounded-full ${
+              currentSlide === index ? "bg-white" : "bg-gray-500"
+            }`}
+          ></button>
         ))}
       </div>
     </div>
