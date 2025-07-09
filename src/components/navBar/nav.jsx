@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import playstore from "../../assets/images/playstore.png";
 import iosLogo from "../../assets/images/appstore.png";
+import snsLogo from "../../assets/logos/SnSlogo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
     <nav className="px-4 md:px-8 py-4 bg-black text-white">
       <div className="flex justify-between items-center">
         {/* Brand / Logo */}
-        <h1 className="text-xl font-bold">LOGO</h1>
+        <img src={snsLogo} alt="Screws and Spanners Logo" className="w-10" />
 
         {/* Hamburger Icon */}
         <button 

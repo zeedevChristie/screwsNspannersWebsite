@@ -5,11 +5,14 @@ const FAQAccordion = () => {
   const navigate = useNavigate(); // Enables navigation
 
   const faqItems = [
-    { question: "How do I request an Artisan?", answer: "Simply log in, navigate to the request section, and follow the steps." },
-    { question: "How do I track my request?", answer: "You can view the progress of your request in the 'My Requests' section." },
-    { question: "What payment methods are accepted?", answer: "We support credit cards, bank transfers, and mobile payments." },
-    { question: "Is customer support available?", answer: "Yes! Our support team is available 24/7 through the app and email." },
-  ];
+  { question: "How do I request a service?", answer: "  " },
+  { question: "What if my artisan doesn't have a phone?", answer: " " },
+  { question: "How do you verify artisans?", answer: " " },
+  // { question: "Is there a cost to join?", answer: " " },
+  // { question: "What happens if I’m not satisfied?", answer: " " },
+  // { question: "Can I recommend an artisan?", answer: " " },
+  // { question: "I am an artisan, how can I get in?", answer: " " },
+ ];
 
   return (
     <div className="space-y-3">

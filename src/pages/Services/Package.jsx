@@ -13,11 +13,11 @@ const ServiceCard = ({ title, description, price }) => {
 
 const Package = () => {
   const services = [
-    { title: "Weekly", description: "7 Days", price: 1000 },
-    { title: "Monthly", description: "30 Days", price: 2000 },
-    { title: "Quarterly", description: "90 Days", price: 4000 },
-    { title: "Half-Year", description: "180 Days", price: 10000 },
-    { title: "Yearly", description: "365 Days", price: 16000 }
+    { title: "Weekly", description: "7 Days", price: "1,000" },
+    { title: "Monthly", description: "30 Days", price:"2,000" },
+    { title: "Quarterly", description: "90 Days", price: "4,000" },
+    { title: "Half-Year", description: "180 Days", price: "10,000" },
+    { title: "Yearly", description: "365 Days", price: "16,000" }
   ];
 
   return (

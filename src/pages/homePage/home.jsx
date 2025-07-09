@@ -5,11 +5,13 @@ import Footer from "../../components/footer/footer";
 import WelcomeCarousel from "../../components/welcome/welcomeCarousel";
 import HowToSection from "../../components/howToSection/howToSection";
 
+
 const Home = () => {
   return (
     <div className="flex flex-col h-screen">
     
      <Navbar />
+     
     
 
       <main className="flex-grow w-full  overflow-auto">
@@ -17,6 +19,7 @@ const Home = () => {
         <Statistics />
         <HowToSection />
       <Footer/>                    
+    
       </main>
 
     </div>

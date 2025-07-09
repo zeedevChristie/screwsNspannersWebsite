@@ -40,8 +40,11 @@ const BlogsAndVlogs = () => {
   ];
 
   return (
-    <div className="p-8  text-white">
-      <h1 className="text-4xl font-bold text-center mb-6">Vlogs & Blogs</h1>
+    <div className="p-4  text-white">
+      <h1 className="text-4xl font-bold text-center mb-2">Real Fixes. Real Stories.</h1>
+      <h2 className="font-serif text-center mb-2">Follow our journey through the homes, communities, and people we serve.
+Watch transformations, behind-the-scenes content, and tips from our team.</h2>
+     
 
       {/* Grid Container */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

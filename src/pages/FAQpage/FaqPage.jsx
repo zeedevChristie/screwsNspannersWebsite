@@ -10,7 +10,7 @@ const FaqPage = () => {
       <Navbar />
 
       {/* FAQ Section */}
-      <main className="flex-grow p-4 md:p-8  bg-black text-white w-full h-[100vh] overflow-auto  ">
+      <main className="flex-grow p-2 md:p-2  bg-black text-white w-full h-[100vh] overflow-auto  ">
         <FAQ />
       </main>
 

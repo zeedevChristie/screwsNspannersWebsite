@@ -78,6 +78,10 @@ const Footer = () => {
             <p className="text-gray-400 text-sm mb-2">
               Subscribe to our newsletter:
             </p>
+            <p className="pb-2 text-gray-400 text-sm mb-2">
+              Stay in the Loop <br />
+              Tips,updates,new features,and spotlights delivered to your inbox.
+            </p>
             <form className="flex">
               <input
                 type="email"
@@ -129,7 +133,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-               <TbBrandLinkedinFilled  />
+                <TbBrandLinkedinFilled />
               </a>
             </div>
           </div>
@@ -148,7 +152,7 @@ const Footer = () => {
       <p className=" mt-20 text-gray-400 text-sm">
         &copy; {new Date().getFullYear()} Triz House. All rights reserved.
       </p>
-    </footer> 
+    </footer>
   );
 };
 
