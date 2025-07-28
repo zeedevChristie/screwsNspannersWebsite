@@ -16,28 +16,30 @@ const slides = [
     image: image1,
     title: "ABOUT SCREWS AND SPANNERS",
     description: `Tired of hearing “I know one guy” only to be disappointed later?
-Or overpaying for a simple job that still isn't done right?
-Screws & Spanners is here to change the game. It's a homegrown app that connects you to trusted artisans – think of electricians, plumbers, furniture fixers, and lots more – without the stress or guesswork.Because life’s hard enough already… let’s make fixing things easy.`,
+Or overpaying for a simple job that still isn’t done right?
+Screws & Spanners is here to change the game. It’s a homegrown app that connects you to trusted artisans – think of electricians, plumbers, furniture fixers, and lots more – without the stress or guesswork.
+Because life’s hard enough already… let’s make fixing things easy.
+`,
   },
   {
     image: image2,
     title: "CONVENIENCE. COMPETENCE. CONTROL.",
-    description: `This isn't just a marketplace. It's a smarter way to get things done.
+    description: `This isn’t just a marketplace. It’s a smarter way to get things done.
 From leaky taps to major repairs, Screws & Spanners puts convenience, competence, and control right in your hands.
 One tap. Zero stress.`,
   },
   {
     image: image3,
     title: "CONVENIENCE",
-    description:
-      `No more calling five people before finding help.
-No waiting endlessly for "someone's guy."
-With Screws & Spanners, get matched with nearby artisans in minutes - on your terms, on your schedule.`},
-   {
+    description: `No more calling five people before finding help.
+No waiting endlessly for “someone’s guy.”
+With Screws & Spanners, get matched with nearby artisans in minutes—on your terms, on your schedule.
+`,
+  },
+  {
     image: image4,
     title: "COMPETENCE",
-    description:
-      `Anyone can join, but not everyone shines.
+    description: `Anyone can join, but not everyone shines.
 We’re building a system that rewards excellent service, so the best artisans rise to the top.
 Over time, your ratings and feedback will shape a trusted community of true professionals.
 `,
@@ -45,26 +47,34 @@ Over time, your ratings and feedback will shape a trusted community of true prof
   {
     image: image5,
     title: "CONTROL",
-description:
-      `Choose who works for you.
+    description: `Choose who works for you.
 Set your budget. Track your request. Rate your experience.
-With Screws & Spanners, you're in charge - from start to finish.
+With Screws & Spanners, you’re in charge—from start to finish.
 `,
   },
 ];
 
 const WelcomeCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isHovered || isPaused) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 10000);
+    }, 20000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered, isPaused]);
 
   return (
-    <div className="relative w-full px-4 pt-4 bg-black text-white overflow-hidden flex flex-col items-center">
+    <div
+      className="relative w-full px-4 pt-4 bg-black text-white overflow-hidden flex flex-col items-center"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="w-full overflow-hidden">
         <div
           className="flex flex-nowrap transition-transform duration-700 ease-in-out"
@@ -75,7 +85,6 @@ const WelcomeCarousel = () => {
               key={index}
               className="flex flex-col md:flex-row items-center justify-center w-full flex-shrink-0"
             >
-              {/* Image Section */}
               <div className="w-full md:w-1/2 h-[70vh] sm:h-[80vh] flex items-center justify-center">
                 <img
                   src={slide.image}
@@ -83,8 +92,6 @@ const WelcomeCarousel = () => {
                   className="w-full h-auto max-w-full rounded-lg object-contain"
                 />
               </div>
-
-              {/* Text & QR Code Section */}
               <div className="w-full md:w-1/2 py-4 px-6 flex flex-col h-[60vh] sm:h-[70vh] justify-between">
                 <div className="text-left">
                   <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-center">
@@ -94,7 +101,6 @@ const WelcomeCarousel = () => {
                     {slide.description}
                   </p>
                 </div>
-
                 <div className="qr-section p-4 flex justify-between">
                   <div className="text-left">
                     <a href="https://apps.apple.com/ng/app/screws-and-spanners/id6630377072">
@@ -131,17 +137,23 @@ const WelcomeCarousel = () => {
         </div>
       </div>
 
-      {/* Navigation Buttons (Centered at Bottom) */}
-      <div className="absolute bottom-6 sm:bottom-12 left-1/2 md:left-1/3 transform -translate-x-1/2 flex gap-4 sm:gap-6 justify-center">
+      {/* Navigation + Pause Controls */}
+      <div className="absolute bottom-6 sm:bottom-12 left-1/2 md:left-1/4 transform -translate-x-1/2 flex gap-4 sm:gap-2 justify-center">
         <button
           onClick={() =>
             setCurrentSlide((prev) =>
               prev === 0 ? slides.length - 1 : prev - 1
             )
           }
-          className="bg-white text-black px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-gray-300"
+          className="bg- text-white px-4 py-2 sm:px-2 sm:py- rounded-lg hover:bg-"
         >
           ❮
+        </button>
+        <button
+          onClick={() => setIsPaused((prev) => !prev)}
+          className="bg-  text-white px- py- sm:px- sm:py- rounded-lg hover:bg-"
+        >
+          {isPaused ? "⏵" : "⏸"}
         </button>
         <button
           onClick={() =>
@@ -149,14 +161,14 @@ const WelcomeCarousel = () => {
               prev === slides.length - 1 ? 0 : prev + 1
             )
           }
-          className="bg-white text-black px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-gray-300"
+          className="bg- text-white px-4 py-2 sm:px-2 sm:py- rounded-lg hover:bg-"
         >
           ❯
         </button>
       </div>
 
-      {/* Dot Navigation Below */}
-      <div className="absolute bottom-4 left-1/2 md:left-1/3 transform -translate-x-1/2 flex justify-center space-x-2 sm:space-x-3">
+      {/* Dot Navigation */}
+      <div className="absolute bottom-6 left-1/2 md:left-1/4 transform -translate-x-1/2 flex justify-center space-x-2 sm:space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}

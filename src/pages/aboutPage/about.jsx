@@ -1,11 +1,11 @@
 import React from "react";
-import convenience from "../../assets/welcomeImages/convenience.png";
-import competence from "../../assets/welcomeImages/competence.jpg";
-import control from "../../assets/welcomeImages/control.jpg";
+import convenience from "../../assets/HomeCarousel/Convenience.jpg";
+import competence from "../../assets/HomeCarousel/Competence.jpg";
+import control from "../../assets/HomeCarousel/Control.jpg";
 import values from "../../assets/images/values.jpg";
 import binocular from "../../assets/images/binocular.jpg";
 import mission from "../../assets/images/mission.jpg";
-import consequence from "../../assets/images/consequence.png";
+// import consequence from "../../assets/images/consequence.png";
 
 const About = () => {
   return (
