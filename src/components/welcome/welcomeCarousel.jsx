@@ -66,7 +66,7 @@ const WelcomeCarousel = () => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 20000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); 
   }, [isHovered, isPaused]);
 
   return (
