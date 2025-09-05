@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         </div>
 
-        /* Navigation Links */
+        {/* /* Navigation Links */ }
           <div>
             <h2 className="text-xl font-bold mb-3">Quick Links</h2>
             <nav className="flex flex-col space-y-2 text-gray-400">
