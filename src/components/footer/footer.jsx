@@ -3,6 +3,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { IoLogoTwitter, IoLogoWhatsapp } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 import iosLogo from "../../assets/images/appstore.png";
 import playstoreLogo from "../../assets/images/playstore.png";
@@ -35,45 +36,45 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Navigation Links */}
-        <div>
-          <h2 className="text-xl font-bold mb-3">Quick Links</h2>
-          <nav className="flex flex-col space-y-2 text-gray-400">
-            <a href="/" className="hover:text-white">
-              Home
-            </a>
-            <a href="/about" className="hover:text-white">
-              About
-            </a>
-            <a href="/projects" className="hover:text-white">
-              Projects
-            </a>
-            <a href="/services" className="hover:text-white">
-              Service Delivery
-            </a>
-            <a href="/vlogs" className="hover:text-white">
-              Vlogs
-            </a>
-            <a href="/contactUs" className="hover:text-white">
-              Contact Us
-            </a>
-            <a href="/faq" className="hover:text-white">
-              FAQ
-            </a>
-            <a href="/privacyPolicy" className="hover:text-white">
-              Privacy Policy
-            </a>
-            <a href="/termsAndConditions" className="hover:text-white">
-              Terms and Conditions
-            </a>
-            <a href="/refundPolicy" className="hover:text-white">
-              Refund Policy
-            </a>
-          </nav>
-        </div>
+        /* Navigation Links */
+          <div>
+            <h2 className="text-xl font-bold mb-3">Quick Links</h2>
+            <nav className="flex flex-col space-y-2 text-gray-400">
+              <Link to="/" className="hover:text-white">
+                Home
+              </Link>
+              <Link to="/about" className="hover:text-white">
+                About
+              </Link>
+              <Link to="/projects" className="hover:text-white">
+                Projects
+              </Link>
+              <Link to="/services" className="hover:text-white">
+                Service Delivery
+              </Link>
+              <Link to="/vlogs" className="hover:text-white">
+                Vlogs
+              </Link>
+              <Link to="/contactUs" className="hover:text-white">
+                Contact Us
+              </Link>
+              <Link to="/faq" className="hover:text-white">
+                FAQ
+              </Link>
+              <Link to="/privacyPolicy" className="hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to="/termsAndConditions" className="hover:text-white">
+                Terms and Conditions
+              </Link>
+              <Link to="/refundPolicy" className="hover:text-white">
+                Refund Policy
+              </Link>
+            </nav>
+          </div>
 
-        <div className="space-y-10">
-          {/* Newsletter Subscription */}
+          <div className="space-y-10">
+            {/* Newsletter Subscription */}
           <div>
             <p className="text-gray-400 text-sm mb-2">
               Subscribe to our newsletter:
